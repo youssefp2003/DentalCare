@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Calendar as BigCalendar, dateFnsLocalizer } from 'react-big-calendar';
 import { format, parse, startOfWeek, getDay } from 'date-fns';
 import { enUS } from 'date-fns/locale';
-import { Appointment, Patient } from '../types';
+import { Appointment} from '../types';
 import AppointmentModal from './AppointmentModal';
 import PatientContact from './PatientContact';
 import { useAuth } from '../contexts/AuthContext';
