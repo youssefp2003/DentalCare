@@ -1,83 +1,119 @@
 # **DentFlow**  
 
 ## **Overview**  
-DentFlow is a modern dental clinic management system tailored to optimize dental practice operations, improve patient management, and simplify appointment scheduling. Whether you're handling patient records, planning treatments, or managing finances, DentFlow ensures seamless and efficient workflows.  
+DentFlow is a state-of-the-art dental clinic management system crafted to enhance operational efficiency, simplify appointment scheduling, and improve patient care. With DentFlow, managing patient records, planning treatments, handling billing, and more becomes a seamless experience.  
 
 ---
 
 ## **Features**  
 
 ### **Patient Management**  
-- Maintain comprehensive patient profiles, including personal details, medical histories, and treatment records.  
+- Store and maintain detailed patient profiles, including personal data, medical history, and treatment records.  
 
 ### **Appointment Scheduling**  
-- Calendar-based system for scheduling, rescheduling, and managing appointments.  
+- Utilize a user-friendly, calendar-based system to schedule, reschedule, and manage appointments.  
 
 ### **Treatment Planning**  
-- Create detailed treatment plans tailored to each patient’s needs.  
+- Create, track, and modify comprehensive treatment plans tailored to individual patients.  
 
 ### **Medical Records Management**  
-- Digitally store and manage medical records, including X-rays and diagnoses.  
+- Digitally manage X-rays, diagnoses, and detailed medical records for streamlined workflows.  
 
 ### **Billing and Invoicing**  
-- Generate accurate invoices and manage payments effortlessly.  
+- Generate detailed invoices and manage payments with integrated billing functionality.  
 
 ### **Prescription Management**  
-- Create, store, and manage prescriptions with ease.  
+- Efficiently create, store, and manage patient prescriptions.  
 
 ---
 
 ## **Technologies Used**  
 
 ### **Frontend**  
-- [Add frontend frameworks/libraries here, e.g., React, Angular, or Vue.js]  
+- **React.js**: Frontend framework for building interactive user interfaces.  
+- **Tailwind CSS**: Styling and UI component framework.  
+- **Redux**: State management for complex application state.  
+- **Axios**: Simplified HTTP requests for API integration.  
 
 ### **Backend**  
-- [Specify backend technologies, e.g., Node.js, Flask, or Django]  
+- **Java 17**: Backend programming language.  
+- **Spring Boot**: Framework for building RESTful services.  
+- **Spring Security**: Authentication and authorization.  
+- **Spring Data JPA**: Database interaction with ease.  
+- **Hibernate**: ORM for managing database persistence.  
+- **Maven**: Dependency and build management.  
 
 ### **Database**  
-- [Database system used, e.g., PostgreSQL, MySQL, or MongoDB]  
+- **PostgreSQL**: Relational database management system.  
+- **Liquibase**: Database schema version control.  
 
 ---
 
 ## **Getting Started**  
 
 ### **Prerequisites**  
-Ensure you have the following installed on your system:  
-- [List prerequisites, e.g., Node.js, Python, Docker, etc.]  
+Ensure your system has the following:  
+- **JDK 17** or higher  
+- **Maven 3.8+**  
+- **PostgreSQL 14+**  
+- **Node.js v14.0.0+**  
+- **npm v6.0.0+**  
+
+---
 
 ### **Installation Steps**  
 
-1. **Clone the Repository**:  
+1. **Clone the Repository**  
    ```bash  
-   git clone [repository-url]  
+   git clone https://github.com/yourusername/DentFlow.git  
    cd DentFlow  
    ```  
 
-2. **Install Dependencies**:  
-   Navigate to the frontend and backend directories and install required dependencies:  
-   ```bash  
-   cd frontend  
-   [Frontend installation commands]  
-   cd ../backend  
-   [Backend installation commands]  
+2. **Database Setup**  
+   Open PostgreSQL and create the database:  
+   ```sql  
+   CREATE DATABASE dentflow;  
    ```  
 
-3. **Configure Environment Variables**:  
-   Set up the necessary environment variables for database connections, API keys, etc.  
-   ```bash  
-   [Environment setup instructions]  
+3. **Configure Backend**  
+   Edit the `src/main/resources/application.properties` file to match your database configuration:  
+   ```properties  
+   spring.datasource.url=jdbc:postgresql://localhost:5432/dentflow  
+   spring.datasource.username=your_username  
+   spring.datasource.password=your_password  
+   spring.jpa.hibernate.ddl-auto=update  
    ```  
 
-4. **Run the Application**:  
-   Start both the frontend and backend services:  
+4. **Build and Run Backend**  
+   Navigate to the backend directory and run the following commands:  
    ```bash  
-   [Run commands for frontend and backend]  
+   cd backend  
+   mvn clean install  
+   mvn spring-boot:run  
    ```  
 
-5. **Access DentFlow**:  
-   Open your web browser and navigate to:  
-   [http://localhost:3000](http://localhost:3000) (or your configured port).  
+5. **Install Frontend Dependencies**  
+   Navigate to the frontend directory and install the required dependencies:  
+   ```bash  
+   cd ../frontend  
+   npm install  
+   ```  
+
+6. **Configure Frontend Environment**  
+   Create a `.env` file in the frontend directory with the following content:  
+   ```env  
+   REACT_APP_API_URL=http://localhost:8080/api  
+   ```  
+
+7. **Run Frontend Application**  
+   Start the frontend development server:  
+   ```bash  
+   npm start  
+   ```  
+
+8. **Access DentFlow**  
+   Open your browser and navigate to:  
+   [http://localhost:3000](http://localhost:3000)  
 
 ---
 
@@ -85,10 +121,24 @@ Ensure you have the following installed on your system:
 
 ```plaintext  
 DentFlow/  
-├── frontend/      # Frontend application files  
-├── backend/       # Backend application files  
-├── database/      # Database schemas and migrations  
-└── docs/          # Documentation files  
+├── frontend/                # Frontend application files  
+│   ├── src/                # React source files  
+│   ├── public/             # Public assets (static files)  
+│   └── package.json        # Frontend dependencies  
+├── backend/                # Backend application files  
+│   ├── src/  
+│   │   ├── main/  
+│   │   │   ├── java/      # Java source files  
+│   │   │   │   ├── controllers/   # RESTful API endpoints  
+│   │   │   │   ├── models/        # Entity classes  
+│   │   │   │   ├── repositories/  # Data access objects  
+│   │   │   │   ├── services/      # Business logic  
+│   │   │   │   └── security/      # Security configurations  
+│   │   │   └── resources/         # Configuration files  
+│   │   └── test/                  # Unit and integration tests  
+│   └── pom.xml                   # Maven dependencies  
+├── database/                     # Database migrations and schemas  
+├── docs/                         # Documentation files  
 ```  
 
 ---
@@ -102,21 +152,19 @@ Contributions are welcome! Follow these steps to contribute:
    ```bash  
    git checkout -b feature/YourFeatureName  
    ```  
-
 3. **Commit Your Changes**:  
    ```bash  
    git commit -m "Add YourFeatureName"  
    ```  
-
 4. **Push to the Branch**:  
    ```bash  
    git push origin feature/YourFeatureName  
    ```  
-
-5. **Submit a Pull Request**.  
+5. **Submit a Pull Request**  
 
 ---
 
 ## **License**  
 
-This project is licensed under [License Name]. See the `LICENSE` file for full details.   
+This project is licensed under the **MIT License**. For more details, see the `LICENSE` file.  
+ 
