@@ -141,5 +141,3 @@ We welcome contributions! To get started:
 This project is licensed under the **MIT License**. For more information, see the [LICENSE](LICENSE) file.
 
 ---
-
-This version enhances readability, improves formatting, and ensures consistency. Let me know if you need further refinements! 😊
