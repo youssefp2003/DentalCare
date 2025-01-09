@@ -42,27 +42,15 @@ export default function Navbar() {
           Appointments
         </Link>
         
-        {user?.role === 'practitioner' ? (
-          <Link
-            to="/patients"
-            className={`flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 ${
-              isActive('/patients') ? 'bg-blue-50 text-blue-600' : 'text-gray-600'
-            }`}
-          >
-            <Users className="h-5 w-5" />
-            Patients
-          </Link>
-        ) : (
-          <Link
-            to="/patient-search"
-            className={`flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 ${
-              isActive('/patient-search') ? 'bg-blue-50 text-blue-600' : 'text-gray-600'
-            }`}
-          >
-            <Users className="h-5 w-5" />
-            Patient Directory
-          </Link>
-        )}
+        <Link
+          to="/patients"
+          className={`flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 ${
+            isActive('/patients') ? 'bg-blue-50 text-blue-600' : 'text-gray-600'
+          }`}
+        >
+          <Users className="h-5 w-5" />
+          Patients
+        </Link>
       </div>
       
       <div className="absolute bottom-4 w-full left-0 px-4">

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "8wnU389YcqSFwKTSUyF8UUdOdebfeWFJrnWfHoEfHZA=",
+  "Source": "DentFlowApi",
+  "BasePath": "_content/DentFlowApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

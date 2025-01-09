@@ -10,7 +10,7 @@ export default function PatientSearchView() {
   });
 
   const filteredPatients = patients.filter(patient =>
-    `${patient.firstName} ${patient.lastName} ${patient.email} ${patient.phone}`
+    `${patient.firstName} ${patient.lastName} ${patient.email} ${patient.phoneNumber}`
       .toLowerCase()
       .includes(searchTerm.toLowerCase())
   );
@@ -48,8 +48,8 @@ export default function PatientSearchView() {
               
               <div className="flex items-center gap-2 text-gray-600">
                 <Phone className="h-4 w-4" />
-                <a href={`tel:${patient.phone}`} className="text-sm hover:text-blue-600">
-                  {patient.phone}
+                <a href={`tel:${patient.phoneNumber}`} className="text-sm hover:text-blue-600">
+                  {patient.phoneNumber}
                 </a>
               </div>
               

@@ -42,8 +42,8 @@ export default function PatientContact({ isOpen, onClose, appointmentId }: Patie
 
         <div className="flex items-center gap-2 text-gray-600">
           <Phone className="h-4 w-4" />
-          <a href={`tel:${patient.phone}`} className="hover:text-blue-600">
-            {patient.phone}
+          <a href={`tel:${patient.phoneNumber}`} className="hover:text-blue-600">
+            {patient.phoneNumber}
           </a>
         </div>
 

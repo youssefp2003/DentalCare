@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Appointment, Patient } from '../types';
 import { X } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 interface AppointmentModalProps {
   isOpen: boolean;
@@ -17,10 +18,9 @@ export default function AppointmentModal({
   appointment,
   selectedDateTime,
 }: AppointmentModalProps) {
-  const [patients] = useState<Patient[]>(() => {
-    const stored = localStorage.getItem('patients');
-    return stored ? JSON.parse(stored) : [];
-  });
+  const [patients, setPatients] = useState<Patient[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const [formData, setFormData] = useState<Omit<Appointment, 'id'>>({
     patientId: '',
@@ -30,6 +30,30 @@ export default function AppointmentModal({
     type: '',
     notes: '',
   });
+
+  useEffect(() => {
+    fetchPatients();
+  }, []);
+
+  const fetchPatients = async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+      const response = await fetch(`${API_BASE_URL}/patients`);
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch patients: ${response.status} ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      setPatients(data);
+    } catch (err) {
+      console.error('Error fetching patients:', err);
+      setError(err instanceof Error ? err.message : 'Failed to fetch patients');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
     if (appointment) {
@@ -54,9 +78,14 @@ export default function AppointmentModal({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Convert the date and time to a proper DateTime format
+    const dateTime = new Date(`${formData.date}T${formData.time}`);
+    
     onSave({
-      id: appointment?.id || '',
+      id: appointment?.id || crypto.randomUUID(),
       ...formData,
+      date: dateTime.toISOString().split('T')[0], // Format as YYYY-MM-DD
     });
   };
 
@@ -79,19 +108,25 @@ export default function AppointmentModal({
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Patient
             </label>
-            <select
-              required
-              className="w-full p-2 border rounded-lg"
-              value={formData.patientId}
-              onChange={(e) => setFormData({ ...formData, patientId: e.target.value })}
-            >
-              <option value="">Select a patient</option>
-              {patients.map((patient) => (
-                <option key={patient.id} value={patient.id}>
-                  {patient.firstName} {patient.lastName}
-                </option>
-              ))}
-            </select>
+            {isLoading ? (
+              <div className="w-full p-2 border rounded-lg bg-gray-50">Loading patients...</div>
+            ) : error ? (
+              <div className="w-full p-2 border rounded-lg text-red-500">{error}</div>
+            ) : (
+              <select
+                required
+                className="w-full p-2 border rounded-lg"
+                value={formData.patientId}
+                onChange={(e) => setFormData({ ...formData, patientId: e.target.value })}
+              >
+                <option value="">Select a patient</option>
+                {patients.map((patient) => (
+                  <option key={patient.id} value={patient.id}>
+                    {patient.firstName} {patient.lastName}
+                  </option>
+                ))}
+              </select>
+            )}
           </div>
 
           <div className="grid grid-cols-2 gap-4 mb-4">

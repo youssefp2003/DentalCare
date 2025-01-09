@@ -14,7 +14,7 @@ export default function PatientModal({ isOpen, onClose, onSave, patient }: Patie
     firstName: '',
     lastName: '',
     email: '',
-    phone: '',
+    phoneNumber: '',
     dateOfBirth: '',
     medicalHistory: ''
   });
@@ -27,7 +27,7 @@ export default function PatientModal({ isOpen, onClose, onSave, patient }: Patie
         firstName: '',
         lastName: '',
         email: '',
-        phone: '',
+        phoneNumber: '',
         dateOfBirth: '',
         medicalHistory: ''
       });
@@ -106,8 +106,8 @@ export default function PatientModal({ isOpen, onClose, onSave, patient }: Patie
               type="tel"
               required
               className="w-full p-2 border rounded-lg"
-              value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              value={formData.phoneNumber}
+              onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
             />
           </div>
 

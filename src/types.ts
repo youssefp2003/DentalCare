@@ -3,7 +3,7 @@ export interface Patient {
   firstName: string;
   lastName: string;
   email: string;
-  phone: string;
+  phoneNumber: string;  // Changed from phone to phoneNumber to match backend
   dateOfBirth: string;
   medicalHistory: string;
 }
@@ -16,6 +16,11 @@ export interface Appointment {
   duration: number; // in minutes
   type: string;
   notes: string;
+}
+
+export interface AppointmentDTO extends Appointment {
+  patientFirstName: string;
+  patientLastName: string;
 }
 
 export interface Treatment {

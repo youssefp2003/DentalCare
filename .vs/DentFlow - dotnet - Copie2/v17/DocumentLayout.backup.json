@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\www\\OneDrive - Ecole Marocaine des Sciences de l\u0027Ing\u00E9nieur\\Documents\\PROJECTS\\School\\DentFlow - dotnet - Copie2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C8D47FC8-40BD-461E-BF09-537603D51192}|DentFlowApi\\DentFlowApi.csproj|c:\\users\\www\\onedrive - ecole marocaine des sciences de l\u0027ing\u00E9nieur\\documents\\projects\\school\\dentflow - dotnet - copie2\\dentflowapi\\dentflowapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{C8D47FC8-40BD-461E-BF09-537603D51192}|DentFlowApi\\DentFlowApi.csproj|solutionrelative:dentflowapi\\dentflowapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8D47FC8-40BD-461E-BF09-537603D51192}|DentFlowApi\\DentFlowApi.csproj|c:\\users\\www\\onedrive - ecole marocaine des sciences de l\u0027ing\u00E9nieur\\documents\\projects\\school\\dentflow - dotnet - copie2\\dentflowapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C8D47FC8-40BD-461E-BF09-537603D51192}|DentFlowApi\\DentFlowApi.csproj|solutionrelative:dentflowapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\www\\OneDrive - Ecole Marocaine des Sciences de l\u0027Ing\u00E9nieur\\Documents\\PROJECTS\\School\\DentFlow - dotnet - Copie2\\DentFlowApi\\appsettings.json",
+              "RelativeDocumentMoniker": "DentFlowApi\\appsettings.json",
+              "ToolTip": "C:\\Users\\www\\OneDrive - Ecole Marocaine des Sciences de l\u0027Ing\u00E9nieur\\Documents\\PROJECTS\\School\\DentFlow - dotnet - Copie2\\DentFlowApi\\appsettings.json",
+              "RelativeToolTip": "DentFlowApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-08T13:35:50.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DentFlowApi.http",
+              "DocumentMoniker": "C:\\Users\\www\\OneDrive - Ecole Marocaine des Sciences de l\u0027Ing\u00E9nieur\\Documents\\PROJECTS\\School\\DentFlow - dotnet - Copie2\\DentFlowApi\\DentFlowApi.http",
+              "RelativeDocumentMoniker": "DentFlowApi\\DentFlowApi.http",
+              "ToolTip": "C:\\Users\\www\\OneDrive - Ecole Marocaine des Sciences de l\u0027Ing\u00E9nieur\\Documents\\PROJECTS\\School\\DentFlow - dotnet - Copie2\\DentFlowApi\\DentFlowApi.http",
+              "RelativeToolTip": "DentFlowApi\\DentFlowApi.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-01-08T13:35:42.561Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
